@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Acc Roblox</title>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #222; color: white; padding: 20px; text-align: center; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .card { background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 15px; }
+    .card-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+    .card-price { color: green; font-weight: bold; margin-bottom: 10px; }
+    .buy-btn { display: block; text-align: center; background: #007bff; color: white; padding: 10px; text-decoration: none; border-radius: 5px; }
+    .buy-btn:hover { background: #0056b3; }
+    footer { background: #222; color: white; text-align: center; padding: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shop Bán Acc Roblox</h1>
+    <p>Chọn acc bạn thích và liên hệ để mua ngay!</p>
+  </header>
+  
+  <div class="container" id="acc-list">
+    <!-- Danh sách acc sẽ được thêm ở đây bằng JS -->
+  </div>
+
+  <footer>
+    &copy; 2025 Shop Acc Roblox | Liên hệ Zalo: 0123456789
+  </footer>
+
+  <script>
+    const accs = [
+      {
+        name: "Acc Roblox #001",
+        image: "https://via.placeholder.com/400x300?text=Acc+001",
+        price: "100.000đ",
+        link: "https://zalo.me/0123456789"
+      },
+      {
+        name: "Acc Roblox #002",
+        image: "https://via.placeholder.com/400x300?text=Acc+002",
+        price: "150.000đ",
+        link: "https://zalo.me/0123456789"
+      },
+      {
+        name: "Acc Roblox #003",
+        image: "https://via.placeholder.com/400x300?text=Acc+003",
+        price: "200.000đ",
+        link: "https://zalo.me/0123456789"
+      }
+    ];
+
+    const listEl = document.getElementById('acc-list');
+    accs.forEach(acc => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${acc.image}" alt="${acc.name}">
+        <div class="card-body">
+          <div class="card-title">${acc.name}</div>
+          <div class="card-price">${acc.price}</div>
+          <a class="buy-btn" href="${acc.link}" target="_blank">Mua ngay</a>
+        </div>
+      `;
+      listEl.appendChild(card);
+    });
+  </script>
+</body>
+</html>
